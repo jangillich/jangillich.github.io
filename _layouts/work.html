@@ -13,24 +13,73 @@ layout: default
   		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 	</head>
+
+{% comment %}
+=======================
+The following part extracts all the tags from your posts and sort tags, so that you do not need to manually collect your tags to a place.
+=======================
+{% endcomment %}
+{% assign rawtags = "" %}
+{% for post in site.categories.work %}
+	{% assign ttags = post.tags | join:'|' | append:'|' %}
+	{% assign rawtags = rawtags | append:ttags %}
+{% endfor %}
+{% assign rawtags = rawtags | split:'|' | sort %}
+
+{% comment %}
+=======================
+The following part removes dulpicated tags and invalid tags like blank tag.
+=======================
+{% endcomment %}
+{% assign tags = "" %}
+{% for tag in rawtags %}
+	{% if tag != "" %}
+		{% if tags == "" %}
+			{% assign tags = tag | split:'|' %}
+		{% endif %}
+		{% unless tags contains tag %}
+			{% assign tags = tags | join:'|' | append:'|' | append:tag | split:'|' %}
+		{% endunless %}
+	{% endif %}
+{% endfor %}
+
+	<div class="tag-filters">
+    <a id="showAll" onclick="showAllTags();">Show All</a>
+    {% for t in tags %}
+    <a onclick="activateTag('{{t}}');" class="tag {{t}}">#{{t}}</a>
+    {% endfor %}
+  </div>
 		<div class="container">
 			<div class="content">
 				<div class="grid">
 					{% for work in site.categories.work %}
-					<figure class="effect-roxy">
+					<figure class="effect-roxy {{work.tags | join: ' '}}">
 						<img src="../img/{{work.imgFilename}}" alt="img10"/>
 						<figcaption>
 							<h2>{{work.title}} <span>{{work.subtitle}}</span></h2>
 							<p>{{work.description}}</p>
-							<a href="#">View more</a>
+							<a href="{{work.url}}">View more</a>
 						</figcaption>			
 					</figure>
 					{% endfor %}
 				</div>
 		</div><!-- /container -->
-		<script>
-			// For Demo purposes only (show hover effect on mobile devices)
-			[].slice.call( document.querySelectorAll('a[href="#"') ).forEach( function(el) {
-				el.addEventListener( 'click', function(ev) { ev.preventDefault(); } );
-			} );
+		<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+		<script type="text/javascript">
+			function activateTag(tag){
+				var theclass = "."+tag;
+				$('figure:not(' + theclass + ')').fadeOut(300, function(){
+					$(theclass).fadeIn(300);
+				});
+				$('.tag').removeClass("active");
+				$('.tag' + theclass).addClass("active");
+				
+			}
+
+			function showAllTags(){
+				$('figure').fadeIn(300);
+			}
 		</script>
