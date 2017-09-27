@@ -16,38 +16,16 @@ layout: default
 		<div class="container">
 			<div class="content">
 				<div class="grid">
+					{% for work in site.categories.work %}
 					<figure class="effect-roxy">
-						<img src="../img/midas.jpg" alt="img09"/>
+						<img src="../img/{{work.imgFilename}}" alt="img10"/>
 						<figcaption>
-							<h2>Midas <span>VR</span></h2>
-							<p>Multidimensional Doodling and Sketching</p>
+							<h2>{{work.title}} <span>{{work.subtitle}}</span></h2>
+							<p>{{work.description}}</p>
 							<a href="#">View more</a>
 						</figcaption>			
 					</figure>
-					<figure class="effect-roxy">
-						<img src="../img/10.jpg" alt="img10"/>
-						<figcaption>
-							<h2>340 <span></span></h2>
-							<p>Oscar is a decent man. He used to clean porches with pleasure.</p>
-							<a href="#">View more</a>
-						</figcaption>			
-					</figure>
-					<figure class="effect-roxy">
-						<img src="../img/divInter.jpg" alt="img10"/>
-						<figcaption>
-							<h2>Divine <span>Intervention</span></h2>
-							<p>Gesture based strategy game</p>
-							<a href="#">View more</a>
-						</figcaption>			
-					</figure>
-					<figure class="effect-roxy">
-						<img src="../img/infovis.png" alt="img10"/>
-						<figcaption>
-							<h2>Munich <span>Visualization</span></h2>
-							<p>Interactive Data visualization</p>
-							<a href="#">View more</a>
-						</figcaption>			
-					</figure>
+					{% endfor %}
 				</div>
 		</div><!-- /container -->
 		<script>
