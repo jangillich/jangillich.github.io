@@ -1,9 +1,0 @@
----
-layout: post
-title:  "Mobile"
-subtitle: "HCI+"
-imgFilename: mhci.png
-description: Conference companion app
-date:   2017-09-26 19:57:39 +0200
-tags: [android]
----

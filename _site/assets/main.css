@@ -488,14 +488,6 @@ body {
 body h1 {
   font-weight: 300; }
 
-body a {
-  color: #000;
-  text-decoration: underline; }
-
-body a:hover, body a:active {
-  color: #9b59b6;
-  background: rgba(255, 255, 255, 0.7); }
-
 /* Header Style */
 header {
   margin: 0 auto;
