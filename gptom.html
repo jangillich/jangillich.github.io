@@ -2,6 +2,7 @@
 <head>
 	<style>
 		body {
+			padding: 4vw;
 			font-size: 4vw;
 			font-family: 'Helvetica';
 			display: flex;
@@ -9,7 +10,7 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 gap: 2vw;
-height: 80%;
+height: 90%;
 		}
 
 		button {
@@ -18,8 +19,8 @@ height: 80%;
 
 /* Auto layout */
 background:black;
-
-padding: 4vw 8vw;
+font-size: 4vw;
+padding: 4vw 12vw;
 gap: 1vw;
 isolation: isolate;
 
@@ -30,7 +31,6 @@ border-radius: 1000px;
 
 /* Inside auto layout */
 border-width: 0px;
-    font-size: 5vw;
 
 
 		}
@@ -48,15 +48,27 @@ border-width: 0px;
 </head>
 <body>
 	<div></div>
+	<div style="height: 8vw; width: 100%; background-image: url('https://www.gptom.com/wp-content/uploads/2023/01/tom_logo_pos_RGB_small-480x155.png'); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
 
-	<img decoding="async" loading="lazy" width="68.6" height="22.2" src="https://www.gptom.com/wp-content/uploads/2023/01/tom_logo_pos_RGB_small.png" alt="" srcset="https://www.gptom.com/wp-content/uploads/2023/01/tom_logo_pos_RGB_small.png 686w, https://www.gptom.com/wp-content/uploads/2023/01/tom_logo_pos_RGB_small-480x155.png 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 686px, 100vw" class="wp-image-253072">
+
 <div style="flex: 1"></div>
-<div style="text-align: center; background-color: #f7f7f7; border-radius: 5vw 5vw 5vw 5vw; padding: 20pt 40pt"><p>Paying <b>12,34€</b></p>
-<p>to <b>Merchant GmbH</b></p></div>
 
-<div style="flex: 5"></div>
+<div style="width: 100%; display:flex; background-color: #f7f7f7; border-radius: 5vw 5vw 5vw 5vw;flex-direction:column; align-items: center; padding: 4vw 0vw">
 
-<button onclick="window.location.href='https://link.tink.com/1.0/pay/?client_id=cd63786e043e4bba91a160dc5f6b3719&redirect_uri=https://console.tink.com/callback&market=DE&locale=en_US&payment_request_id=79c73ae0d3b311edbb416b8c259847a6&session_id=4e0d4693044e4ad98adbce45848b69866b3fe79c0bb04fb1afc8aa47a7eb0e58&input_provider=de-postbank-münchen-ob';">PAY NOW</button>
+<div style="margin-bottom: 4vw; text-align: center;"><p><span style="font-size: 3vw">Paying</span><br/><b style="font-size: 10vw">12,34€</b>
+<br>to Merchant GmbH</p></div>
+<div style=" display: flex; align-items:center; gap: 5vw; padding: 2vw 2vw; box-shadow: 0vw 0vw 1vw 1vw rgba(0,0,0,0.05); border-radius: 2vw; background: white;">
+	<div style="width: 8vw; height: 8vw; background-size: cover; background-image: url('https://cdn.tink.se/provider-images/de/de-postbank.png');"></div>
+	<div style="display: flex; flex-direction: column;"><span>Postbank</span><span style="font-size: 3vw; color: #7f7f7f;">DE128839400554412347</span></div>
+	<div><a href="blank" style="color: #7f7f7f; font-size: 3vw;">Change</a></div>
+</div>
+
+</div>
+
+
+<div style="flex: 1"></div>
+
+<button onclick="window.location.href='https://link.tink.com/1.0/pay/?client_id=cd63786e043e4bba91a160dc5f6b3719&redirect_uri=https://console.tink.com/callback&market=DE&locale=en_US&payment_request_id=5a002b20d3e711edbb416b8c259847a6&session_id=5f3c76c621cd495a9f108845e03a2a65edf441c9eae248a7b114243643b1cb44&input_provider=de-postbank-münchen-ob';">PAY NOW</button>
 
 <p style="color: #7f7f7f; font-size: 2vw;">By proceeding you are accepting our <a style="color: #7f7f7f;" href="/">Terms and conditions</a></p>
 </body>
